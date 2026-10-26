@@ -1,0 +1,55 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-0.6B",
+    "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+    "threads": 4,
+    "tasks_per_split": 64,
+    "calibration_tasks": 2,
+    "evaluation_tasks": 64,
+    "seeds": [
+      17
+    ],
+    "modes": [
+      "nonthinking"
+    ],
+    "conditions": [
+      "independent",
+      "copied_correct",
+      "mutual_correction",
+      "aggregate_only"
+    ],
+    "policies": [
+      "none",
+      "morca",
+      "random_budget"
+    ],
+    "max_new_tokens": 96,
+    "max_thinking_tokens": 512,
+    "lambda": 3.0,
+    "kappa": 1.0,
+    "B": 1.0,
+    "B_R": 1.0,
+    "uptake_threshold": 0.001,
+    "bootstrap_samples": 2000,
+    "primary_comparison": {
+      "mode": "nonthinking",
+      "condition": "mutual_correction",
+      "policy": "morca",
+      "baseline": "none",
+      "alpha": 0.05
+    }
+  },
+  "config_hash": "af8ea89f78120e5bcaf781b822db79a0ceef81ab5f2732db6e3175981ee1ac78",
+  "versions": {
+    "python": "3.14.6 (main, Jun 11 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+    "torch": "2.10.0+cu128",
+    "transformers": "5.3.0",
+    "platform": "Linux-7.1.8-200.fc44.x86_64-x86_64-with-glibc2.43"
+  },
+  "source_hashes": {
+    "topology.py": "762083e185a641ce89cf37c4782281f50d39d2d7198589b5aa8f851590a3b572",
+    "experiment.py": "3c474810d783287d826925414174adbf237cadbf1c2d36263848f01a35117934",
+    "estimate.py": "e97eca16a8e4d6eb97ff3ad3a4aeaf230310548b0c84e1f9843575fc1852f224",
+    "prepare_laptop.py": "717f5db57e7e5a83f69f14991d85fcd65cdd244dcbc8ebeadfca5c3dfd685fed"
+  }
+}

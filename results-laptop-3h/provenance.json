@@ -1,0 +1,11 @@
+{
+  "checkpoint_commit": "c1899de289a04d12100db370d81485cdf75e47ca",
+  "checkpoint_sha256": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b",
+  "checkpoint_bytes": 1503300328,
+  "original_files": {
+    "MoRCA.lean": "439af7d3779e204b79bb8f3248074559e10b817c0370aef6a76eb7abd4facb48",
+    "MoRCA_research_proposal.md": "b348f49cdc666c2ebe7c222a6cbd8f0bdaa0dd25f3fe539780e6f84cb90d7acf",
+    "morca_reference.py": "d38ec54ab1d091c920f3047c88d959e092761ac009044f3f473b2a894d5f309d"
+  },
+  "experiment_status": "not_started_awaiting_user_approval"
+}

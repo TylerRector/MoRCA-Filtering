@@ -1,0 +1,38 @@
+{
+  "calibration_return_lengths": {
+    "3": 1,
+    "2": 2
+  },
+  "harm_detection_auroc": {
+    "nonthinking": 0.8380594940227968
+  },
+  "calibration_factor_means": {
+    "nonthinking": {
+      "independent": {
+        "H": 0.032513804733753204,
+        "P": 0.0,
+        "E": 0.0,
+        "R": 0.0
+      },
+      "copied_correct": {
+        "H": 0.0,
+        "P": 0.0011385541075251671,
+        "E": 0.0,
+        "R": 0.0
+      },
+      "mutual_correction": {
+        "H": 0.19121270067989826,
+        "P": 0.0010869685700546942,
+        "E": 0.0,
+        "R": 0.25
+      },
+      "aggregate_only": {
+        "H": 0.0,
+        "P": 1.0,
+        "E": 0.0,
+        "R": 0.0
+      }
+    }
+  },
+  "note": "Harm AUROC uses posthoc held-out marginal labels; this is not validated redundancy AUROC."
+}

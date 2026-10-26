@@ -1,0 +1,50 @@
+[
+  {
+    "mode": "nonthinking",
+    "policy": "none",
+    "accuracy": 0.91015625,
+    "paired_accuracy_delta": 0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "reference_log_score": -0.5760383359665866,
+    "mean_tokens": 61.875,
+    "tasks": 64,
+    "protected_drops": 0,
+    "false_suppression_rate": 0.0,
+    "helpful_edge_denominator": 327
+  },
+  {
+    "mode": "nonthinking",
+    "policy": "morca",
+    "accuracy": 0.9375,
+    "paired_accuracy_delta": 0.02734375,
+    "ci95": [
+      0.0078125,
+      0.046875
+    ],
+    "reference_log_score": -0.47493633124395274,
+    "mean_tokens": 58.35546875,
+    "tasks": 64,
+    "protected_drops": 0,
+    "false_suppression_rate": 0.01529051987767584,
+    "helpful_edge_denominator": 327
+  },
+  {
+    "mode": "nonthinking",
+    "policy": "random_budget",
+    "accuracy": 0.92578125,
+    "paired_accuracy_delta": 0.015625,
+    "ci95": [
+      0.0,
+      0.03515625
+    ],
+    "reference_log_score": -0.506978100987908,
+    "mean_tokens": 58.8828125,
+    "tasks": 64,
+    "protected_drops": 0,
+    "false_suppression_rate": 0.04281345565749235,
+    "helpful_edge_denominator": 327
+  }
+]

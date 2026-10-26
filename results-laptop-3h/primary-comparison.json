@@ -1,0 +1,18 @@
+{
+  "specification": {
+    "mode": "nonthinking",
+    "condition": "mutual_correction",
+    "policy": "morca",
+    "baseline": "none",
+    "alpha": 0.05
+  },
+  "n_tasks": 64,
+  "complete": true,
+  "wins": 7,
+  "losses": 0,
+  "ties": 57,
+  "accuracy_delta": 0.109375,
+  "two_sided_exact_mcnemar_p": 0.015625,
+  "positive_primary_result": true,
+  "note": "One prespecified comparison. Partial-run p-values are descriptive only; do not stop early for significance. Other comparisons are exploratory."
+}

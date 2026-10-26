@@ -1,0 +1,1038 @@
+{
+  "status": "prepared_not_started",
+  "config": {
+    "model": "Qwen/Qwen3-0.6B",
+    "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+    "threads": 4,
+    "tasks_per_split": 64,
+    "calibration_tasks": 2,
+    "evaluation_tasks": 64,
+    "seeds": [
+      17
+    ],
+    "modes": [
+      "nonthinking"
+    ],
+    "conditions": [
+      "independent",
+      "copied_correct",
+      "mutual_correction",
+      "aggregate_only"
+    ],
+    "policies": [
+      "none",
+      "morca",
+      "random_budget"
+    ],
+    "max_new_tokens": 96,
+    "max_thinking_tokens": 512,
+    "lambda": 3.0,
+    "kappa": 1.0,
+    "B": 1.0,
+    "B_R": 1.0,
+    "uptake_threshold": 0.001,
+    "bootstrap_samples": 2000,
+    "primary_comparison": {
+      "mode": "nonthinking",
+      "condition": "mutual_correction",
+      "policy": "morca",
+      "baseline": "none",
+      "alpha": 0.05
+    }
+  },
+  "source_hashes": {
+    "experiment.py": "3c474810d783287d826925414174adbf237cadbf1c2d36263848f01a35117934",
+    "topology.py": "762083e185a641ce89cf37c4782281f50d39d2d7198589b5aa8f851590a3b572",
+    "estimate.py": "e97eca16a8e4d6eb97ff3ad3a4aeaf230310548b0c84e1f9843575fc1852f224",
+    "prepare_laptop.py": "717f5db57e7e5a83f69f14991d85fcd65cdd244dcbc8ebeadfca5c3dfd685fed",
+    "config.hackathon-laptop.json": "ee5e2e54d87ba6bc42e1d3a07abaf47923cab38783567edd7d11fd44cab6e5cd",
+    "run-laptop.sh": "fb8d5f260ba1b3b69834ba036acf35109118f2a4ce1d0d6059b59bb9158b15f8"
+  },
+  "checkpoint_sha256": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b",
+  "checkpoint_bytes": 1503300328,
+  "versions": {
+    "torch": "2.10.0",
+    "transformers": "5.3.0",
+    "numpy": "2.4.6",
+    "scipy": "1.16.2",
+    "huggingface-hub": "1.7.2"
+  },
+  "tasks": {
+    "calibration": [
+      {
+        "id": "calibration-0000",
+        "split": "calibration",
+        "question": "Compute 25 + 9.",
+        "choices": [
+          35,
+          33,
+          36,
+          34
+        ],
+        "truth": 3,
+        "a": 25,
+        "b": 9
+      },
+      {
+        "id": "calibration-0001",
+        "split": "calibration",
+        "question": "Compute 28 + 8.",
+        "choices": [
+          35,
+          36,
+          38,
+          37
+        ],
+        "truth": 1,
+        "a": 28,
+        "b": 8
+      }
+    ],
+    "evaluation": [
+      {
+        "id": "evaluation-0000",
+        "split": "evaluation",
+        "question": "Compute 45 + 26.",
+        "choices": [
+          72,
+          73,
+          71,
+          70
+        ],
+        "truth": 2,
+        "a": 45,
+        "b": 26
+      },
+      {
+        "id": "evaluation-0001",
+        "split": "evaluation",
+        "question": "Compute 26 + 87.",
+        "choices": [
+          113,
+          115,
+          114,
+          112
+        ],
+        "truth": 0,
+        "a": 26,
+        "b": 87
+      },
+      {
+        "id": "evaluation-0002",
+        "split": "evaluation",
+        "question": "Compute 40 + 8.",
+        "choices": [
+          47,
+          48,
+          50,
+          49
+        ],
+        "truth": 1,
+        "a": 40,
+        "b": 8
+      },
+      {
+        "id": "evaluation-0003",
+        "split": "evaluation",
+        "question": "Compute 81 + 79.",
+        "choices": [
+          162,
+          160,
+          159,
+          161
+        ],
+        "truth": 1,
+        "a": 81,
+        "b": 79
+      },
+      {
+        "id": "evaluation-0004",
+        "split": "evaluation",
+        "question": "Compute 8 + 73.",
+        "choices": [
+          82,
+          81,
+          83,
+          80
+        ],
+        "truth": 1,
+        "a": 8,
+        "b": 73
+      },
+      {
+        "id": "evaluation-0005",
+        "split": "evaluation",
+        "question": "Compute 18 + 41.",
+        "choices": [
+          60,
+          61,
+          58,
+          59
+        ],
+        "truth": 3,
+        "a": 18,
+        "b": 41
+      },
+      {
+        "id": "evaluation-0006",
+        "split": "evaluation",
+        "question": "Compute 53 + 23.",
+        "choices": [
+          76,
+          77,
+          75,
+          78
+        ],
+        "truth": 0,
+        "a": 53,
+        "b": 23
+      },
+      {
+        "id": "evaluation-0007",
+        "split": "evaluation",
+        "question": "Compute 81 + 85.",
+        "choices": [
+          165,
+          168,
+          167,
+          166
+        ],
+        "truth": 3,
+        "a": 81,
+        "b": 85
+      },
+      {
+        "id": "evaluation-0008",
+        "split": "evaluation",
+        "question": "Compute 96 + 9.",
+        "choices": [
+          105,
+          106,
+          104,
+          107
+        ],
+        "truth": 0,
+        "a": 96,
+        "b": 9
+      },
+      {
+        "id": "evaluation-0009",
+        "split": "evaluation",
+        "question": "Compute 90 + 81.",
+        "choices": [
+          170,
+          171,
+          172,
+          173
+        ],
+        "truth": 1,
+        "a": 90,
+        "b": 81
+      },
+      {
+        "id": "evaluation-0010",
+        "split": "evaluation",
+        "question": "Compute 6 + 69.",
+        "choices": [
+          76,
+          74,
+          75,
+          77
+        ],
+        "truth": 2,
+        "a": 6,
+        "b": 69
+      },
+      {
+        "id": "evaluation-0011",
+        "split": "evaluation",
+        "question": "Compute 3 + 81.",
+        "choices": [
+          84,
+          85,
+          86,
+          83
+        ],
+        "truth": 0,
+        "a": 3,
+        "b": 81
+      },
+      {
+        "id": "evaluation-0012",
+        "split": "evaluation",
+        "question": "Compute 84 + 98.",
+        "choices": [
+          183,
+          182,
+          184,
+          181
+        ],
+        "truth": 1,
+        "a": 84,
+        "b": 98
+      },
+      {
+        "id": "evaluation-0013",
+        "split": "evaluation",
+        "question": "Compute 12 + 37.",
+        "choices": [
+          50,
+          51,
+          48,
+          49
+        ],
+        "truth": 3,
+        "a": 12,
+        "b": 37
+      },
+      {
+        "id": "evaluation-0014",
+        "split": "evaluation",
+        "question": "Compute 26 + 36.",
+        "choices": [
+          63,
+          61,
+          64,
+          62
+        ],
+        "truth": 3,
+        "a": 26,
+        "b": 36
+      },
+      {
+        "id": "evaluation-0015",
+        "split": "evaluation",
+        "question": "Compute 7 + 49.",
+        "choices": [
+          58,
+          56,
+          55,
+          57
+        ],
+        "truth": 1,
+        "a": 7,
+        "b": 49
+      },
+      {
+        "id": "evaluation-0016",
+        "split": "evaluation",
+        "question": "Compute 6 + 73.",
+        "choices": [
+          80,
+          78,
+          79,
+          81
+        ],
+        "truth": 2,
+        "a": 6,
+        "b": 73
+      },
+      {
+        "id": "evaluation-0017",
+        "split": "evaluation",
+        "question": "Compute 48 + 47.",
+        "choices": [
+          97,
+          95,
+          96,
+          94
+        ],
+        "truth": 1,
+        "a": 48,
+        "b": 47
+      },
+      {
+        "id": "evaluation-0018",
+        "split": "evaluation",
+        "question": "Compute 44 + 38.",
+        "choices": [
+          81,
+          83,
+          82,
+          84
+        ],
+        "truth": 2,
+        "a": 44,
+        "b": 38
+      },
+      {
+        "id": "evaluation-0019",
+        "split": "evaluation",
+        "question": "Compute 79 + 93.",
+        "choices": [
+          171,
+          172,
+          174,
+          173
+        ],
+        "truth": 1,
+        "a": 79,
+        "b": 93
+      },
+      {
+        "id": "evaluation-0020",
+        "split": "evaluation",
+        "question": "Compute 45 + 45.",
+        "choices": [
+          91,
+          92,
+          90,
+          89
+        ],
+        "truth": 2,
+        "a": 45,
+        "b": 45
+      },
+      {
+        "id": "evaluation-0021",
+        "split": "evaluation",
+        "question": "Compute 89 + 84.",
+        "choices": [
+          173,
+          172,
+          175,
+          174
+        ],
+        "truth": 0,
+        "a": 89,
+        "b": 84
+      },
+      {
+        "id": "evaluation-0022",
+        "split": "evaluation",
+        "question": "Compute 29 + 5.",
+        "choices": [
+          36,
+          33,
+          34,
+          35
+        ],
+        "truth": 2,
+        "a": 29,
+        "b": 5
+      },
+      {
+        "id": "evaluation-0023",
+        "split": "evaluation",
+        "question": "Compute 32 + 39.",
+        "choices": [
+          71,
+          72,
+          73,
+          70
+        ],
+        "truth": 0,
+        "a": 32,
+        "b": 39
+      },
+      {
+        "id": "evaluation-0024",
+        "split": "evaluation",
+        "question": "Compute 23 + 54.",
+        "choices": [
+          79,
+          78,
+          76,
+          77
+        ],
+        "truth": 3,
+        "a": 23,
+        "b": 54
+      },
+      {
+        "id": "evaluation-0025",
+        "split": "evaluation",
+        "question": "Compute 46 + 53.",
+        "choices": [
+          98,
+          99,
+          101,
+          100
+        ],
+        "truth": 1,
+        "a": 46,
+        "b": 53
+      },
+      {
+        "id": "evaluation-0026",
+        "split": "evaluation",
+        "question": "Compute 77 + 40.",
+        "choices": [
+          118,
+          119,
+          117,
+          116
+        ],
+        "truth": 2,
+        "a": 77,
+        "b": 40
+      },
+      {
+        "id": "evaluation-0027",
+        "split": "evaluation",
+        "question": "Compute 26 + 44.",
+        "choices": [
+          69,
+          71,
+          70,
+          72
+        ],
+        "truth": 2,
+        "a": 26,
+        "b": 44
+      },
+      {
+        "id": "evaluation-0028",
+        "split": "evaluation",
+        "question": "Compute 38 + 63.",
+        "choices": [
+          100,
+          103,
+          101,
+          102
+        ],
+        "truth": 2,
+        "a": 38,
+        "b": 63
+      },
+      {
+        "id": "evaluation-0029",
+        "split": "evaluation",
+        "question": "Compute 57 + 94.",
+        "choices": [
+          152,
+          151,
+          153,
+          150
+        ],
+        "truth": 1,
+        "a": 57,
+        "b": 94
+      },
+      {
+        "id": "evaluation-0030",
+        "split": "evaluation",
+        "question": "Compute 85 + 73.",
+        "choices": [
+          157,
+          160,
+          158,
+          159
+        ],
+        "truth": 2,
+        "a": 85,
+        "b": 73
+      },
+      {
+        "id": "evaluation-0031",
+        "split": "evaluation",
+        "question": "Compute 78 + 16.",
+        "choices": [
+          96,
+          95,
+          94,
+          93
+        ],
+        "truth": 2,
+        "a": 78,
+        "b": 16
+      },
+      {
+        "id": "evaluation-0032",
+        "split": "evaluation",
+        "question": "Compute 33 + 10.",
+        "choices": [
+          44,
+          42,
+          45,
+          43
+        ],
+        "truth": 3,
+        "a": 33,
+        "b": 10
+      },
+      {
+        "id": "evaluation-0033",
+        "split": "evaluation",
+        "question": "Compute 49 + 84.",
+        "choices": [
+          135,
+          134,
+          132,
+          133
+        ],
+        "truth": 3,
+        "a": 49,
+        "b": 84
+      },
+      {
+        "id": "evaluation-0034",
+        "split": "evaluation",
+        "question": "Compute 74 + 79.",
+        "choices": [
+          155,
+          153,
+          152,
+          154
+        ],
+        "truth": 1,
+        "a": 74,
+        "b": 79
+      },
+      {
+        "id": "evaluation-0035",
+        "split": "evaluation",
+        "question": "Compute 78 + 49.",
+        "choices": [
+          126,
+          127,
+          129,
+          128
+        ],
+        "truth": 1,
+        "a": 78,
+        "b": 49
+      },
+      {
+        "id": "evaluation-0036",
+        "split": "evaluation",
+        "question": "Compute 33 + 86.",
+        "choices": [
+          118,
+          119,
+          121,
+          120
+        ],
+        "truth": 1,
+        "a": 33,
+        "b": 86
+      },
+      {
+        "id": "evaluation-0037",
+        "split": "evaluation",
+        "question": "Compute 45 + 3.",
+        "choices": [
+          49,
+          48,
+          47,
+          50
+        ],
+        "truth": 1,
+        "a": 45,
+        "b": 3
+      },
+      {
+        "id": "evaluation-0038",
+        "split": "evaluation",
+        "question": "Compute 47 + 36.",
+        "choices": [
+          83,
+          84,
+          82,
+          85
+        ],
+        "truth": 0,
+        "a": 47,
+        "b": 36
+      },
+      {
+        "id": "evaluation-0039",
+        "split": "evaluation",
+        "question": "Compute 77 + 68.",
+        "choices": [
+          147,
+          144,
+          146,
+          145
+        ],
+        "truth": 3,
+        "a": 77,
+        "b": 68
+      },
+      {
+        "id": "evaluation-0040",
+        "split": "evaluation",
+        "question": "Compute 82 + 19.",
+        "choices": [
+          101,
+          100,
+          103,
+          102
+        ],
+        "truth": 0,
+        "a": 82,
+        "b": 19
+      },
+      {
+        "id": "evaluation-0041",
+        "split": "evaluation",
+        "question": "Compute 60 + 87.",
+        "choices": [
+          147,
+          146,
+          149,
+          148
+        ],
+        "truth": 0,
+        "a": 60,
+        "b": 87
+      },
+      {
+        "id": "evaluation-0042",
+        "split": "evaluation",
+        "question": "Compute 41 + 9.",
+        "choices": [
+          52,
+          50,
+          49,
+          51
+        ],
+        "truth": 1,
+        "a": 41,
+        "b": 9
+      },
+      {
+        "id": "evaluation-0043",
+        "split": "evaluation",
+        "question": "Compute 98 + 49.",
+        "choices": [
+          147,
+          148,
+          146,
+          149
+        ],
+        "truth": 0,
+        "a": 98,
+        "b": 49
+      },
+      {
+        "id": "evaluation-0044",
+        "split": "evaluation",
+        "question": "Compute 3 + 50.",
+        "choices": [
+          55,
+          53,
+          52,
+          54
+        ],
+        "truth": 1,
+        "a": 3,
+        "b": 50
+      },
+      {
+        "id": "evaluation-0045",
+        "split": "evaluation",
+        "question": "Compute 39 + 57.",
+        "choices": [
+          98,
+          97,
+          96,
+          95
+        ],
+        "truth": 2,
+        "a": 39,
+        "b": 57
+      },
+      {
+        "id": "evaluation-0046",
+        "split": "evaluation",
+        "question": "Compute 75 + 7.",
+        "choices": [
+          82,
+          81,
+          83,
+          84
+        ],
+        "truth": 0,
+        "a": 75,
+        "b": 7
+      },
+      {
+        "id": "evaluation-0047",
+        "split": "evaluation",
+        "question": "Compute 88 + 29.",
+        "choices": [
+          118,
+          119,
+          116,
+          117
+        ],
+        "truth": 3,
+        "a": 88,
+        "b": 29
+      },
+      {
+        "id": "evaluation-0048",
+        "split": "evaluation",
+        "question": "Compute 56 + 42.",
+        "choices": [
+          99,
+          100,
+          97,
+          98
+        ],
+        "truth": 3,
+        "a": 56,
+        "b": 42
+      },
+      {
+        "id": "evaluation-0049",
+        "split": "evaluation",
+        "question": "Compute 11 + 63.",
+        "choices": [
+          76,
+          75,
+          74,
+          73
+        ],
+        "truth": 2,
+        "a": 11,
+        "b": 63
+      },
+      {
+        "id": "evaluation-0050",
+        "split": "evaluation",
+        "question": "Compute 52 + 61.",
+        "choices": [
+          113,
+          114,
+          112,
+          115
+        ],
+        "truth": 0,
+        "a": 52,
+        "b": 61
+      },
+      {
+        "id": "evaluation-0051",
+        "split": "evaluation",
+        "question": "Compute 36 + 97.",
+        "choices": [
+          135,
+          132,
+          133,
+          134
+        ],
+        "truth": 2,
+        "a": 36,
+        "b": 97
+      },
+      {
+        "id": "evaluation-0052",
+        "split": "evaluation",
+        "question": "Compute 34 + 22.",
+        "choices": [
+          55,
+          58,
+          56,
+          57
+        ],
+        "truth": 2,
+        "a": 34,
+        "b": 22
+      },
+      {
+        "id": "evaluation-0053",
+        "split": "evaluation",
+        "question": "Compute 55 + 26.",
+        "choices": [
+          81,
+          83,
+          80,
+          82
+        ],
+        "truth": 0,
+        "a": 55,
+        "b": 26
+      },
+      {
+        "id": "evaluation-0054",
+        "split": "evaluation",
+        "question": "Compute 93 + 82.",
+        "choices": [
+          175,
+          177,
+          176,
+          174
+        ],
+        "truth": 0,
+        "a": 93,
+        "b": 82
+      },
+      {
+        "id": "evaluation-0055",
+        "split": "evaluation",
+        "question": "Compute 23 + 38.",
+        "choices": [
+          62,
+          61,
+          60,
+          63
+        ],
+        "truth": 1,
+        "a": 23,
+        "b": 38
+      },
+      {
+        "id": "evaluation-0056",
+        "split": "evaluation",
+        "question": "Compute 70 + 52.",
+        "choices": [
+          123,
+          124,
+          121,
+          122
+        ],
+        "truth": 3,
+        "a": 70,
+        "b": 52
+      },
+      {
+        "id": "evaluation-0057",
+        "split": "evaluation",
+        "question": "Compute 40 + 53.",
+        "choices": [
+          93,
+          92,
+          95,
+          94
+        ],
+        "truth": 0,
+        "a": 40,
+        "b": 53
+      },
+      {
+        "id": "evaluation-0058",
+        "split": "evaluation",
+        "question": "Compute 41 + 5.",
+        "choices": [
+          48,
+          47,
+          45,
+          46
+        ],
+        "truth": 3,
+        "a": 41,
+        "b": 5
+      },
+      {
+        "id": "evaluation-0059",
+        "split": "evaluation",
+        "question": "Compute 36 + 84.",
+        "choices": [
+          119,
+          120,
+          121,
+          122
+        ],
+        "truth": 1,
+        "a": 36,
+        "b": 84
+      },
+      {
+        "id": "evaluation-0060",
+        "split": "evaluation",
+        "question": "Compute 14 + 27.",
+        "choices": [
+          40,
+          42,
+          41,
+          43
+        ],
+        "truth": 2,
+        "a": 14,
+        "b": 27
+      },
+      {
+        "id": "evaluation-0061",
+        "split": "evaluation",
+        "question": "Compute 91 + 25.",
+        "choices": [
+          115,
+          117,
+          116,
+          118
+        ],
+        "truth": 2,
+        "a": 91,
+        "b": 25
+      },
+      {
+        "id": "evaluation-0062",
+        "split": "evaluation",
+        "question": "Compute 58 + 9.",
+        "choices": [
+          67,
+          68,
+          69,
+          66
+        ],
+        "truth": 0,
+        "a": 58,
+        "b": 9
+      },
+      {
+        "id": "evaluation-0063",
+        "split": "evaluation",
+        "question": "Compute 50 + 11.",
+        "choices": [
+          60,
+          62,
+          63,
+          61
+        ],
+        "truth": 3,
+        "a": 50,
+        "b": 11
+      }
+    ]
+  },
+  "workload": {
+    "per_condition_per_seed_task": {
+      "independent": {
+        "calibration": {
+          "score_sets": 8,
+          "generate": 2
+        },
+        "evaluation": {
+          "generate": 8,
+          "score_sets": 6
+        }
+      },
+      "copied_correct": {
+        "calibration": {
+          "score_sets": 16,
+          "generate": 4
+        },
+        "evaluation": {
+          "generate": 16,
+          "score_sets": 6
+        }
+      },
+      "mutual_correction": {
+        "calibration": {
+          "score_sets": 34,
+          "generate": 52
+        },
+        "evaluation": {
+          "generate": 16,
+          "score_sets": 6
+        }
+      },
+      "aggregate_only": {
+        "calibration": {
+          "score_sets": 12,
+          "generate": 3
+        },
+        "evaluation": {
+          "generate": 12,
+          "score_sets": 5
+        }
+      }
+    },
+    "per_mode_total": {
+      "generate": 3450,
+      "score_sets": 1612
+    }
+  }
+}
